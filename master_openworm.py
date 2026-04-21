@@ -23,6 +23,7 @@ print("It will report where steps are missing.")
 print("Eventually all the steps will be filled in.")
 print("")
 
+os.system("which ld && ld --version")
 
 print("****************************")
 print("  Step 1: Run c302 + Sibernetic in the same loop.")
@@ -125,6 +126,8 @@ PARAMETERS = {
 my_env = os.environ.copy()
 DISPLAY = ":44"
 my_env["DISPLAY"] = DISPLAY
+if "PATH" not in my_env:
+    my_env["PATH"] = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 # Xvfb or X virtual framebuffer is a display server implementing the X11 display server protocol.
 # In contrast to other display servers, Xvfb performs all graphical operations in virtual memory without showing any screen output.
